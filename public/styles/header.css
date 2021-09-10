@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  width: 100%;
+  color:white;
+  background-color: #fade2a;
+  background-image: url("https://www.transparenttextures.com/patterns/wall-4-light.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
