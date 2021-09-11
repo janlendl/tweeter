@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  outline: none;
+  resize: none;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  background: transparent;
+  border-bottom: medium solid #545149;
+}
+
+.button_counter {
+  padding-top: .5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: 'Bungee', cursive;
+}
+
+.tweet {
+  background-color: #4056A1;
+  color: white;
+}
