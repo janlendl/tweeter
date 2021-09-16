@@ -22,7 +22,57 @@ form {
   font-family: 'Bungee', cursive;
 }
 
+.new-tweet label {
+  padding-top: 20px;
+  font-weight: bold;
+}
 .tweet {
   background-color: #4056A1;
   color: white;
+}
+
+article {
+  margin-top:70px;
+  padding: 40px;
+  border: solid #545149;
+}
+
+.tweets-post:hover {
+  box-shadow: 10px 10px grey;
+}
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-pic {
+  display: flex;
+}
+
+.profile-name {
+  padding-left: 20px;
+}
+
+.profile-handle {
+  color: darkgrey;
+}
+.post {
+  padding: 0 20px 0 20px; 
+}
+
+.feed-footer {
+  border-top: solid black;
+  padding: 0 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.footer-icons {
+  color: #4056A1;
+}
+
+i:hover {
+  color: darkkhaki;
 }
