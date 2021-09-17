@@ -31,7 +31,7 @@ $(document).ready(() => {
     }
   ]
 
-const renderTweets = function(tweets) {
+  const renderTweets = function(tweets) {
   tweets.forEach((tweet) => {
     const $tempData = createTweetElement(tweet);
     $('#tweets-container').append($tempData);
@@ -39,9 +39,9 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-}
+  }
 
-const createTweetElement = function(tweet) {
+  const createTweetElement = function(tweet) {
   const timeFormat = timeago.format(tweet.created_at);
   let $tweet = /* Your code for creating the tweet element */
   `
@@ -65,8 +65,36 @@ const createTweetElement = function(tweet) {
   </article>
   `;
   return $tweet;
-};
+  };
 
-renderTweets(data);
+  renderTweets(data);
+
+  const form = $(".submit-tweet");
+  form.on('submit', function (event) {
+    event.preventDefault();
+
+    const serializeData = $(this).serialize();
+    console.log('serialized data: ',serializeData);
+
+    $.post('/tweets', serializeData)
+    .then((resp) => {
+     console.log(resp);
+    });
+  });
+
+  // $(".submit-tweet").submit(function (event) {
+  //   event.preventDefault();
+
+  //   const form = $(this);
+
+  //   $.ajax({
+  //     url: '/tweets',
+  //     type: 'POST',
+  //     data: form.serialize(),
+  //   }).then((data) => {
+  //       console.log(data);
+  //   });
+  // });
+
 
 });
