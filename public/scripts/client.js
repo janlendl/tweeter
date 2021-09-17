@@ -6,32 +6,54 @@
 
 $(document).ready(() => {
 
-
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
 
-  const createTweetElement = () => {
-    const timeFormat = timeago.format(tweetData.created_at);
+const renderTweets = function(tweets) {
+  tweets.forEach((tweet) => {
+    const $tempData = createTweetElement(tweet);
+    $('#tweets-container').append($tempData);
+  });
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+}
 
-    const markup = `
+const createTweetElement = function(tweet) {
+  const timeFormat = timeago.format(tweet.created_at);
+  let $tweet = /* Your code for creating the tweet element */
+  `
   <article class="tweets-post">
   <header class="feed-header">
   <div class="profile-pic">
-    <img src="${tweetData.user.avatars}"/>
-    <p class="profile-name">${tweetData.user.name}</p>
+    <img src="${tweet.user.avatars}"/>
+    <p class="profile-name">${tweet.user.name}</p>
   </div>
-  <p class="profile-handle">${tweetData.user.handle}</p>
+  <p class="profile-handle">${tweet.user.handle}</p>
   </header>
-  <p class="post">${tweetData.content.text}</p>
+  <p class="post">${tweet.content.text}</p>
   <footer class="feed-footer">
     <p class="feed-age">${timeFormat}</p>
     <div class="footer-icons">
@@ -42,18 +64,9 @@ $(document).ready(() => {
   </footer>
   </article>
   `;
+  return $tweet;
+};
 
-    return markup;
-  };
-
-
-  const $tweet = createTweetElement(tweetData);
-
-
-
-
-  // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+renderTweets(data);
 
 });
