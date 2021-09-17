@@ -52,8 +52,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <form class="submit-tweet">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="button_counter">
+            <button class="tweet" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-      <!-- output for dynamic tweet feed -->
+      <!-- this will be where the dynamic tweet will be shown -->
       <section id="tweets-container">
       </section>
     </main>
