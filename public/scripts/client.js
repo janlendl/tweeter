@@ -12,12 +12,12 @@ $(document).ready(() => {
       const $tempData = createTweetElement(tweet);
       $('#tweets-container').prepend($tempData);
     });
-    $('#tweet-text').val('');
+    $(this).val('');
   };
 
   const createTweetElement = function(tweet) {
-  const timeFormat = timeago.format(tweet.created_at);
-  let $tweet =
+    const timeFormat = timeago.format(tweet.created_at);
+    let $tweet =
   `
   <article class="tweets-post">
   <header class="feed-header">
@@ -38,12 +38,11 @@ $(document).ready(() => {
   </footer>
   </article>
   `;
-  return $tweet;
+    return $tweet;
   };
 
-  $(".submit-tweet").submit(function (event) {
+  $(".submit-tweet").submit(function(event) {
     if (!$.trim($('#tweet-text').val())) {
-      console.log('ERROR');
       alert('Your tweet shouldn\'t be empty');
       return false;
     }
@@ -51,6 +50,7 @@ $(document).ready(() => {
       alert('Your tweet exceeds 140 characters!');
       return false;
     }
+
     event.preventDefault();
 
     const form = $(this);
@@ -60,22 +60,22 @@ $(document).ready(() => {
       type: 'POST',
       data: form.serialize(),
     }).then((res) => {
-        loadTweets(res);
+      loadTweets(res);
     });
   });
 
-const loadTweets = () => {$.ajax({
-  url: '/tweets',
-  type: 'GET',
-  dataType: 'JSON',
-  success: (res) => {
-    renderTweets(res);
-  },
+  const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      type: 'GET',
+      dataType: 'JSON',
+      success: (res) => {
+        renderTweets(res);
+      },
 
-  error: (error) => {
-    alert("Error on tweet!", error);
-  }
-})
-}
-
+      error: (error) => {
+        alert("Error on tweet!", error);
+      }
+    });
+  };
 });
