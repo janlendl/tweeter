@@ -41,6 +41,11 @@ $(document).ready(() => {
   };
 
   $(".submit-tweet").submit(function (event) {
+    if (!$.trim($('#tweet-text').val())) {
+      console.log('ERROR');
+      alert('Your tweet shouldn\'t be empty');
+      return false;
+    }
     event.preventDefault();
 
     const form = $(this);
@@ -64,7 +69,7 @@ const loadTweets = () => {$.ajax({
 
   },
   error: (error) => {
-    alert("Error on tweet!", error);
+    alert("Error on tweet!");
   }
 })
 }
