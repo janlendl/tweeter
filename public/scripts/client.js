@@ -8,10 +8,11 @@ $(document).ready(() => {
 
   // renders the tweet and add it to the element to be created
   const renderTweets = function(data) {
-  data.forEach((tweet) => {
-    const $tempData = createTweetElement(tweet);
-    $('#tweets-container').prepend($tempData);
-  });
+    data.forEach((tweet) => {
+      const $tempData = createTweetElement(tweet);
+      $('#tweets-container').prepend($tempData);
+    });
+    $('#tweet-text').val('');
   };
 
   const createTweetElement = function(tweet) {
@@ -46,6 +47,10 @@ $(document).ready(() => {
       alert('Your tweet shouldn\'t be empty');
       return false;
     }
+    if ($('#tweet-text').val().length > 140) {
+      alert('Your tweet exceeds 140 characters!');
+      return false;
+    }
     event.preventDefault();
 
     const form = $(this);
@@ -65,11 +70,10 @@ const loadTweets = () => {$.ajax({
   dataType: 'JSON',
   success: (res) => {
     renderTweets(res);
-    console.log(res);
-
   },
+
   error: (error) => {
-    alert("Error on tweet!");
+    alert("Error on tweet!", error);
   }
 })
 }
