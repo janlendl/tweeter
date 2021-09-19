@@ -76,3 +76,14 @@ article {
 i:hover {
   color: darkkhaki;
 }
+
+.error {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: thick solid red;
+  margin: 20px 400px 0px 400px;
+  padding: 0px 30px 0px 30px;
+  color: red;
+}
