@@ -6,13 +6,19 @@
 
 $(document).ready(() => {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // renders the tweet and add it to the element to be created
   const renderTweets = function(data) {
     data.forEach((tweet) => {
       const $tempData = createTweetElement(tweet);
       $('#tweets-container').prepend($tempData);
     });
-    $(this).val('');
+    $('#tweet-text').val('');
   };
 
   const createTweetElement = function(tweet) {
@@ -27,7 +33,7 @@ $(document).ready(() => {
   </div>
   <p class="profile-handle">${tweet.user.handle}</p>
   </header>
-  <p class="post">${tweet.content.text}</p>
+  <p class="post">${escape(tweet.content.text)}</p>
   <footer class="feed-footer">
     <p class="feed-age">${timeFormat}</p>
     <div class="footer-icons">
@@ -43,14 +49,17 @@ $(document).ready(() => {
 
   $(".submit-tweet").submit(function(event) {
     if (!$.trim($('#tweet-text').val())) {
-      alert('Your tweet shouldn\'t be empty');
+      $('.error').attr('style', 'visibility: visible');
+      $('.error-message').text('Your tweet shouldn\'t be empty!')
       return false;
     }
     if ($('#tweet-text').val().length > 140) {
-      alert('Your tweet exceeds 140 characters!');
+      $('.error').attr('style', 'visibility: visible');
+      $('.error-message').text('Your tweet shouldn\'t exceed 140 characters!')
       return false;
     }
 
+    $('.error').attr('style', 'visibility: hidden');
     event.preventDefault();
 
     const form = $(this);
