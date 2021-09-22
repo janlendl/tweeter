@@ -83,7 +83,24 @@ i:hover {
   align-items: center;
   justify-content: space-evenly;
   border: thick solid red;
-  margin: 20px 400px 0px 400px;
+  margin: 20px 0px 0px 0px;
   padding: 0px 30px 0px 30px;
   color: red;
+}
+
+
+@media only screen and (min-width: 1024px)  {
+  .avatar {
+    width: 40%;
+    position: fixed;
+    top: 135px;
+    left: 45px;
+  }
+
+  .container {
+    width: 50%;
+    position: absolute;
+    right: -27px;
+    top: 150px;
+  }
 }
