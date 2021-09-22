@@ -23,12 +23,13 @@ form {
 }
 
 .new-tweet label {
-  padding-top: 20px;
+  padding-top: 1.25rem;
   font-weight: bold;
 }
 .tweet {
   background-color: #4056A1;
   color: white;
+  cursor: pointer;
 }
 
 article {
@@ -38,7 +39,7 @@ article {
 }
 
 .tweets-post:hover {
-  box-shadow: 10px 10px grey;
+  box-shadow: 0.625rem 0.625rem grey;
 }
 .feed-header {
   display: flex;
@@ -50,23 +51,23 @@ article {
 }
 
 .profile-name {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 .profile-handle {
   color: darkgrey;
 }
 .post {
-  padding: 0 20px 0 20px; 
+  padding: 0 1.25rem 0 1.25rem; 
 }
 
 .feed-footer {
   border-top: solid black;
-  padding: 0 20px 0 20px;
+  padding: 0 1.25rem 0 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .footer-icons {
@@ -83,8 +84,8 @@ i:hover {
   align-items: center;
   justify-content: space-evenly;
   border: thick solid red;
-  margin: 20px 0px 0px 0px;
-  padding: 0px 30px 0px 30px;
+  margin: 1.25rem 0rem 0rem 0rem;
+  padding: 0rem 1.875rem 0rem 1.875rem;
   color: red;
 }
 
@@ -93,14 +94,14 @@ i:hover {
   .avatar {
     width: 40%;
     position: fixed;
-    top: 135px;
-    left: 45px;
+    top: 8.4375rem;
+    left: 2.8125rem;
   }
 
   .container {
     width: 50%;
     position: absolute;
-    right: -27px;
-    top: 150px;
+    right: -1.6875rem;
+    top: 9.375rem;
   }
 }
