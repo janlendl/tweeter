@@ -10,7 +10,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 9999;
+  z-index: 1;
 }
 
 .title {
@@ -26,4 +26,19 @@ nav {
 
 .fa-angle-double-down {
   color: rgb(187, 38, 38);
+  animation: updown 2s ease infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20%);
+  }
+
+  50% {
+    transform: translateY(20%);
+  }
+
+  100% {
+    transform: translateY(-20%);
+  }
 }
