@@ -19,6 +19,7 @@ $(document).ready(() => {
       $('#tweets-container').prepend($tempData);
     });
     $('#tweet-text').val('');
+    $('.counter').val('140')
   };
 
   const createTweetElement = function(tweet) {
