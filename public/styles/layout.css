@@ -19,6 +19,7 @@ body {
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
+  /* height: 100vh; */
 }
 
 /*
@@ -28,4 +29,8 @@ body {
 .container {
   margin-left: 5%;
   margin-right: 5%;
+}
+
+.main-footer {
+  height: 50px;
 }
