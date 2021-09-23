@@ -1,4 +1,4 @@
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 23.4375rem) {
   body {
     font-size: medium;
   }
@@ -13,17 +13,17 @@
   }
 
   .avatar {
-    height: 200px;
-    padding-bottom: 30px;
+    height: 12.5rem;
+    padding-bottom: 1.875rem;
   }
 
   .avatar img {
-    margin: 40px 0px 0px 0px;
-    height: 130px;
+    margin: 2.5rem 0rem 0rem 0rem;
+    height: 8.125rem;
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 63.9375rem) {
   nav {
     position: relative;
     background-color: #fade2a;
@@ -34,7 +34,7 @@
   }
 }
 
-@media only screen and (min-width: 1024px)  {
+@media only screen and (min-width: 64rem)  {
   .avatar {
     width: 40%;
     position: fixed;

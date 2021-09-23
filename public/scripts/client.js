@@ -6,7 +6,7 @@
 
 $(document).ready(() => {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -19,7 +19,7 @@ $(document).ready(() => {
       $('#tweets-container').prepend($tempData);
     });
     $('#tweet-text').val('');
-    $('.counter').val('140')
+    $('.counter').val('140');
   };
 
   const createTweetElement = function(tweet) {
@@ -51,12 +51,12 @@ $(document).ready(() => {
   $(".submit-tweet").submit(function(event) {
     if (!$.trim($('#tweet-text').val())) {
       $('.error').attr('style', 'visibility: visible');
-      $('.error-message').text('Your tweet shouldn\'t be empty!')
+      $('.error-message').text('Your tweet shouldn\'t be empty!');
       return false;
     }
     if ($('#tweet-text').val().length > 140) {
       $('.error').attr('style', 'visibility: visible');
-      $('.error-message').text('Your tweet shouldn\'t exceed 140 characters!')
+      $('.error-message').text('Your tweet shouldn\'t exceed 140 characters!');
       return false;
     }
 
@@ -82,7 +82,6 @@ $(document).ready(() => {
       success: (res) => {
         renderTweets(res);
       },
-
       error: (error) => {
         alert("Error on tweet!", error);
       }

@@ -19,12 +19,8 @@ body {
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
-  /* height: 100vh; */
+  height: 100vh;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
-*/
 
 .container {
   margin-left: 5%;
