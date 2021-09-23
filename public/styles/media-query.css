@@ -1,0 +1,51 @@
+@media only screen and (max-width: 375px) {
+  body {
+    font-size: medium;
+  }
+
+  nav {
+    align-items: baseline;
+    height: 4rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .avatar {
+    height: 200px;
+    padding-bottom: 30px;
+  }
+
+  .avatar img {
+    margin: 40px 0px 0px 0px;
+    height: 130px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    position: relative;
+    background-color: #fade2a;
+    background-image: url("https://www.transparenttextures.com/patterns/wall-4-light.png");
+  }
+  .avatar {
+    margin-top: 0rem;
+  }
+}
+
+@media only screen and (min-width: 1024px)  {
+  .avatar {
+    width: 40%;
+    position: fixed;
+    top: 8.4375rem;
+    left: 2.8125rem;
+  }
+
+  .container {
+    width: 50%;
+    position: absolute;
+    right: -1.6875rem;
+    top: 9.375rem;
+  }
+}
