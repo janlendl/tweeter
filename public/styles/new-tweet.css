@@ -11,6 +11,7 @@ form {
   border-right: hidden;
   background: transparent;
   border-bottom: medium solid #545149;
+  padding-top: 1.25rem;
 }
 
 .button_counter {
